@@ -18,7 +18,8 @@
 		"build": "vue-tsc --noEmit && vite build",
 		"preview": "vite preview",
 		"lint": "eslint -c .eslintrc.json vite.config.ts \"{src/**/*,lib/**/*}.{ts,tsx,vue}\" --fix",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"cm": "cz"
 	},
 	"dependencies": {
 		"vue": "^3.2.25"
@@ -31,6 +32,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.19.0",
 		"@typescript-eslint/parser": "^5.19.0",
 		"@vitejs/plugin-vue": "^2.3.0",
+		"commitizen": "^4.2.4",
 		"cz-conventional-changelog": "3.3.0",
 		"eslint": "^8.13.0",
 		"eslint-config-prettier": "^8.5.0",
