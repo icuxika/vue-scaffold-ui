@@ -1,5 +1,6 @@
 {
-	"name": "vue-scaffold-ui",
+	"name": "@icuxika/vue-scaffold-ui",
+	"author": "icuxika",
 	"files": [
 		"dist"
 	],
@@ -11,7 +12,7 @@
 			"require": "./dist/vue-scaffold-ui.umd.js"
 		}
 	},
-	"private": true,
+	"private": false,
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite",

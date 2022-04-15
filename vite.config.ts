@@ -10,6 +10,12 @@ export default defineConfig(({ command, mode }) => {
 		return {
 			// dev 独有配置
 			plugins: [vue()],
+			resolve: {
+				alias: {
+					"@": path.resolve(__dirname, "./src"),
+					"vue-scaffold-ui": path.resolve("lib"),
+				},
+			},
 		};
 	} else {
 		// command === 'build'
