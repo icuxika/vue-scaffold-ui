@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import * as path from "path";
+import typescript2 from "rollup-plugin-typescript2";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -21,12 +22,33 @@ export default defineConfig(({ command, mode }) => {
 		// command === 'build'
 		return {
 			// build 独有配置
-			plugins: [vue()],
+			plugins: [
+				vue(),
+				typescript2({
+					check: false,
+					tsconfigOverride: {
+						compilerOptions: {
+							sourceMap: true,
+							declaration: true,
+							declarationMap: true,
+						},
+						include: [
+							"lib/**/*.ts",
+							"lib/**/*.d.ts",
+							"lib/**/*.tsx",
+							"lib/**/*.vue",
+						],
+					},
+				}),
+			],
 			build: {
+				cssCodeSplit: false,
 				lib: {
 					entry: path.resolve(__dirname, "lib/index.ts"),
-					name: "vue-scaffold-ui",
-					fileName: (format) => `vue-scaffold-ui.${format}.js`,
+					formats: ["es", "cjs"],
+					name: "@icuxika/vue-scaffold-ui",
+					fileName: (format) =>
+						format === "es" ? "index.js" : "index.cjs",
 				},
 				rollupOptions: {
 					// 确保外部化处理那些你不想打包进库的依赖
