@@ -19,7 +19,7 @@ export default defineConfig(({ command, mode }) => {
 				},
 			},
 			build: {
-				outDir: "preview",
+				outDir: "docs",
 			},
 		};
 	}
