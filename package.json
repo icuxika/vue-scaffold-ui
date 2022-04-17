@@ -14,7 +14,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vue-tsc --noEmit && vite build",
-		"preview": "vite preview",
+		"build:preview": "vue-tsc --noEmit && vite build --mode preview",
+		"preview": "vite preview --mode preview",
 		"lint": "eslint -c .eslintrc.json vite.config.ts \"{src/**/*,lib/**/*}.{ts,tsx,vue}\" --fix",
 		"prepare": "husky install",
 		"cm": "cz"

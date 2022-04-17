@@ -7,6 +7,22 @@ import typescript2 from "rollup-plugin-typescript2";
 export default defineConfig(({ command, mode }) => {
 	// 读取对应mode下 .env 中的环境变量
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+	if (mode === "preview") {
+		// 库预览
+		return {
+			// dev 独有配置
+			plugins: [vue()],
+			resolve: {
+				alias: {
+					"@": path.resolve(__dirname, "./src"),
+					"vue-scaffold-ui": path.resolve("lib"),
+				},
+			},
+			build: {
+				outDir: "preview",
+			},
+		};
+	}
 	if (command === "serve") {
 		return {
 			// dev 独有配置
