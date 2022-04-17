@@ -10,6 +10,7 @@ export default defineConfig(({ command, mode }) => {
 	if (mode === "preview") {
 		// 库预览
 		return {
+			base: "./",
 			// dev 独有配置
 			plugins: [vue()],
 			resolve: {
