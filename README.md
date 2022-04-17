@@ -14,6 +14,10 @@ vue-scaffold-ui
 │   │   main.ts
 ```
 
+## Documentation
+
+[http://blog.icuxika.com/vue-scaffold-ui/](http://blog.icuxika.com/vue-scaffold-ui/)
+
 ## Usage
 
 ### installation

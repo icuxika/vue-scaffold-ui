@@ -13,6 +13,10 @@ vue-scaffold-ui
 │   │   main.ts
 ```
 
+## 文档
+
+[http://blog.icuxika.com/vue-scaffold-ui/](http://blog.icuxika.com/vue-scaffold-ui/)
+
 ## 如何使用
 
 ### 安装
