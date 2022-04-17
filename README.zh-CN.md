@@ -1,34 +1,33 @@
 <h1 align="center">Vue Scaffold UI</h1>
-<p align="center">A Vue 3 Component Library</p>
-<p align="center">English | <a href="README.zh-CN.md">中文</a></p>
+<p align="center">一个 Vue 3 组件库</p>
 
-## Project structure
+## 项目结构
 
 ```
 vue-scaffold-ui
 │
-└───lib[Library Directory]
+└───lib[库目录]
 │   │   index.ts
 │   
-└───src[Library demo directory]
+└───src[库演示目录]
 │   │   main.ts
 ```
 
-## Usage
+## 如何使用
 
-### installation
+### 安装
 
 ```shell
 yarn add @icuxika/vue-scaffold-ui
 ```
 
-or
+或
 
 ```shell
 npm install @icuxika/vue-scaffold-ui
 ```
 
-### import `@icuxika/vue-scaffold-ui`
+### 引入 `@icuxika/vue-scaffold-ui`
 
 ```javascript
 import { VBanner, VButton } from "@icuxika/vue-scaffold-ui";
@@ -43,29 +42,29 @@ import "@icuxika/vue-scaffold-ui/style.css";
 <VButton loading>naive-ui</VButton>
 ```
 
-## Build
+## 如何构建
 
-### preview
+### 本项目预览
 
 ```shell
 yarn dev
 ```
 
-### build lib
+### 构建库
 
 ```shell
 yarn build
 ```
 
-### publish
+### 发布
 
 ```shell
 npm publish
 ```
 
-## Other
+## 其他
 
-### format
+### 格式化
 
 ```shell
 yarn lint
@@ -77,6 +76,7 @@ yarn lint
 yarn cm
 ```
 
-## Thanks
+## 强烈感谢
 
 [How To Create A Vue.js 3 Plugin Component With Others In Minutes And Publish NPM!](https://www.youtube.com/watch?v=ui717bVHS4I)
+> 尝试了诸多方式使一个使用TypeScript编写的库发布到npm后还能被其他TypeScript项目通过`import { xxx } from "yyy"`的方式正确使用，最终找到这个视频，并按照他的步骤实现了。
