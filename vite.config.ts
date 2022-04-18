@@ -1,6 +1,8 @@
 import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import * as path from "path";
+import { svgstore } from "./plugins/vite-plugin-vue-svg-store2";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -11,7 +13,7 @@ export default defineConfig(({ command, mode }) => {
 		return {
 			base: "./",
 			// dev 独有配置
-			plugins: [vue()],
+			plugins: [vue(), vueJsx(), svgstore()],
 			resolve: {
 				alias: {
 					"@": path.resolve(__dirname, "./src"),
@@ -26,7 +28,7 @@ export default defineConfig(({ command, mode }) => {
 	if (command === "serve") {
 		return {
 			// dev 独有配置
-			plugins: [vue()],
+			plugins: [vue(), vueJsx(), svgstore()],
 			resolve: {
 				alias: {
 					"@": path.resolve(__dirname, "./src"),
@@ -38,7 +40,7 @@ export default defineConfig(({ command, mode }) => {
 		// command === 'build'
 		return {
 			// build 独有配置
-			plugins: [vue()],
+			plugins: [vue(), vueJsx()],
 			build: {
 				cssCodeSplit: false,
 				lib: {

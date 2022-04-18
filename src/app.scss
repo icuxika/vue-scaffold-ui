@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  // 使边框和内边距的值包含在width内
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+ul, ol {
+  list-style: none;
+}

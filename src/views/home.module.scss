@@ -1,0 +1,73 @@
+.container {
+  height: 100vh;
+
+  > .banner {
+    background: linear-gradient(
+                    90deg,
+                    rgba(146, 143, 194, 1) 0%,
+                    rgba(150, 240, 228, 1) 35%,
+                    rgba(3, 178, 200, 1) 76%,
+                    rgba(3, 182, 207, 1) 79%,
+                    rgba(2, 189, 218, 1) 84%,
+                    rgba(1, 198, 232, 0.7189250700280112) 94%,
+                    rgba(0, 212, 255, 1) 100%
+    );
+    // 圆弧
+    clip-path: ellipse(80% 60% at 50% 40%);
+
+    > .content {
+      padding: 128px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #3f19a6;
+
+      > .actions {
+        padding: 8px 0;
+
+        a {
+          margin: 0 8px;
+          background: #e95939;
+          color: white;
+          display: inline-block;
+          border-radius: 4px;
+          padding: 8px 24px;
+        }
+      }
+    }
+  }
+
+  > .feature {
+    margin: 64px auto;
+    padding: 0 16px;
+
+    > ul {
+      display: flex;
+      justify-content: space-between;
+
+      > li {
+        display: grid;
+        grid-template-areas: "icon title" "icon text";
+        grid-template-rows: 1fr auto;
+
+        > svg {
+          grid-area: icon;
+          width: 64px;
+          height: 64px;
+        }
+
+        > h3 {
+          grid-area: title;
+          font-size: 24px;
+          margin-left: 8px;
+        }
+
+        > p {
+          grid-area: text;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
