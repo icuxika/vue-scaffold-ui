@@ -27,6 +27,6 @@ const routes: RouteRecordRaw[] = [
 ];
 
 export const router = createRouter({
-	history: createWebHistory(),
+	history: createWebHistory(import.meta.env.VITE_DOCS_SUB_PATH),
 	routes: routes,
 });

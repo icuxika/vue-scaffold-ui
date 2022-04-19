@@ -8,7 +8,7 @@ import { svgstore } from "./plugins/vite-plugin-vue-svg-store2";
 export default defineConfig(({ command, mode }) => {
 	// 读取对应mode下 .env 中的环境变量
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
-	if (mode === "preview") {
+	if (mode === "preview" || mode === "docs") {
 		// 库预览
 		return {
 			base: "./",
