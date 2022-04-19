@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import { App } from "./App";
 import { router } from "./router";
-import "@svgstore";
+import "@svgSprite";
 
 const app = createApp(App);
 app.use(router);
