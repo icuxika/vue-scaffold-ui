@@ -4,5 +4,9 @@
 		"module": "esnext",
 		"moduleResolution": "node"
 	},
-	"include": ["vite.config.ts", "plugins/vite-plugin-vue-svg-sprite.ts"]
+	"include": [
+		"vite.config.ts",
+		"plugins/vite-plugin-vue-svg-sprite.ts",
+		"plugins/vite-plugin-vue-demo.ts"
+	]
 }

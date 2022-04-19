@@ -1,8 +1,13 @@
 import { FunctionalComponent } from "vue";
-import { ButtonA } from "./ButtonA";
+import Demo from "../../components/Demo.vue";
+import ButtonDemo1 from "./ButtonDemo1.vue";
 
 export const ButtonDemo: FunctionalComponent = () => {
-	return <ButtonA />;
+	return (
+		<div>
+			<Demo component={ButtonDemo1} />
+		</div>
+	);
 };
 
 ButtonDemo.displayName = "BannerDemo";

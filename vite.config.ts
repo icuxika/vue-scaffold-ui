@@ -3,6 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import * as path from "path";
 import { svgSprite } from "./plugins/vite-plugin-vue-svg-sprite";
+import { demo } from "./plugins/vite-plugin-vue-demo";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -13,11 +14,11 @@ export default defineConfig(({ command, mode }) => {
 		return {
 			base: "./",
 			// dev 独有配置
-			plugins: [vue(), vueJsx(), svgSprite()],
+			plugins: [vue(), vueJsx(), svgSprite(), demo()],
 			resolve: {
 				alias: {
 					"@": path.resolve(__dirname, "./src"),
-					"vue-scaffold-ui": path.resolve("lib"),
+					"@icuxika/vue-scaffold-ui": path.resolve("lib"),
 				},
 			},
 			build: {
@@ -28,11 +29,11 @@ export default defineConfig(({ command, mode }) => {
 	if (command === "serve") {
 		return {
 			// dev 独有配置
-			plugins: [vue(), vueJsx(), svgSprite()],
+			plugins: [vue(), vueJsx(), svgSprite(), demo()],
 			resolve: {
 				alias: {
 					"@": path.resolve(__dirname, "./src"),
-					"vue-scaffold-ui": path.resolve("lib"),
+					"@icuxika/vue-scaffold-ui": path.resolve("lib"),
 				},
 			},
 		};
