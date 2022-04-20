@@ -1,0 +1,22 @@
+.container {
+  border: 1px solid dodgerblue;
+  margin: 16px 0 32px;
+
+  > h2 {
+    font-size: 24px;
+    padding: 8px 16px;
+    border-bottom: 1px solid dodgerblue;
+  }
+
+  > .component {
+    padding: 16px;
+  }
+
+  > .action {
+    padding: 8px 16px;
+  }
+
+  > .code {
+    padding: 8px 16px;
+  }
+}

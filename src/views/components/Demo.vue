@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, DefineComponent, ref } from "vue";
 import { VButton } from "@icuxika/vue-scaffold-ui";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Prism from "prismjs";
 import "prismjs/themes/prism.css";
 
-type ComponentType = object & {
+type ComponentType = DefineComponent & {
 	/**
 	 * 标题
 	 */
@@ -19,7 +19,7 @@ type ComponentType = object & {
 };
 
 interface Props {
-	component: object;
+	component: DefineComponent;
 }
 const props = withDefaults(defineProps<Props>(), {});
 // 标题
@@ -53,26 +53,5 @@ const toggleCodeVisible = () => (codeVisible.value = !codeVisible.value);
 	</div>
 </template>
 <style lang="scss" scoped>
-.container {
-	border: 1px solid dodgerblue;
-	margin: 16px 0 32px;
-
-	> h2 {
-		font-size: 24px;
-		padding: 8px 16px;
-		border-bottom: 1px solid dodgerblue;
-	}
-
-	> .component {
-		padding: 16px;
-	}
-
-	> .action {
-		padding: 8px 16px;
-	}
-
-	> .code {
-		padding: 8px 16px;
-	}
-}
+@import "./demox.module.scss";
 </style>
