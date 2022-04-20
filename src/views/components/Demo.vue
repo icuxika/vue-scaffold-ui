@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { computed, DefineComponent, ref } from "vue";
+import { computed, ref } from "vue";
 import { VButton } from "@icuxika/vue-scaffold-ui";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Prism from "prismjs";
 import "prismjs/themes/prism.css";
 
-type ComponentType = DefineComponent & {
+type ComponentType = object & {
 	/**
 	 * 标题
 	 */
@@ -19,7 +19,7 @@ type ComponentType = DefineComponent & {
 };
 
 interface Props {
-	component: DefineComponent;
+	component: object;
 }
 const props = withDefaults(defineProps<Props>(), {});
 // 标题

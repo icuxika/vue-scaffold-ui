@@ -51,11 +51,11 @@ export const DemoX = defineComponent({
 				<h2>{(props.component as ComponentType).__sourceCodeTitle}</h2>
 				<div class={style.component}>{h(props.component)}</div>
 				<div class={style.action}>
-					<VButton
-						onClick={withModifiers(toggleCodeVisible, ["self"])}
-					>
-						{codeVisible.value ? "隐藏源代码" : "查看源代码"}
-					</VButton>
+					<div onClick={withModifiers(toggleCodeVisible, ["stop"])}>
+						<VButton>
+							{codeVisible.value ? "隐藏源代码" : "查看源代码"}
+						</VButton>
+					</div>
 				</div>
 				{codeVisible.value ? (
 					<div class={style.code}>
