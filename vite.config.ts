@@ -4,6 +4,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import * as path from "path";
 import { svgSprite } from "./plugins/vite-plugin-vue-svg-sprite";
 import { demo } from "./plugins/vite-plugin-vue-demo";
+import vueI18n from "@intlify/vite-plugin-vue-i18n";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -14,7 +15,16 @@ export default defineConfig(({ command, mode }) => {
 		return {
 			base: "./",
 			// dev 独有配置
-			plugins: [vue(), vueJsx(), svgSprite(), demo()],
+			plugins: [
+				vue(),
+				vueJsx(),
+				svgSprite(),
+				demo(),
+				vueI18n({
+					include: path.resolve(__dirname, "./locales/**"),
+					compositionOnly: true,
+				}),
+			],
 			resolve: {
 				alias: {
 					"@": path.resolve(__dirname, "./src"),
@@ -29,7 +39,16 @@ export default defineConfig(({ command, mode }) => {
 	if (command === "serve") {
 		return {
 			// dev 独有配置
-			plugins: [vue(), vueJsx(), svgSprite(), demo()],
+			plugins: [
+				vue(),
+				vueJsx(),
+				svgSprite(),
+				demo(),
+				vueI18n({
+					include: path.resolve(__dirname, "./locales/**"),
+					compositionOnly: true,
+				}),
+			],
 			resolve: {
 				alias: {
 					"@": path.resolve(__dirname, "./src"),

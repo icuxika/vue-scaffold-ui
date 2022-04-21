@@ -1,5 +1,9 @@
-import { defineComponent, FunctionalComponent } from "vue";
-import { RouterView, RouterLink } from "vue-router";
+import { FunctionalComponent, Transition, VNode } from "vue";
+import {
+	RouterView,
+	RouterLink,
+	RouteLocationNormalizedLoaded,
+} from "vue-router";
 import style from "./docs.module.scss";
 
 export const Docs: FunctionalComponent = () => {
@@ -10,7 +14,15 @@ export const Docs: FunctionalComponent = () => {
 				<RouterLink to={"/docs/banner"}>Banner</RouterLink>
 				<RouterLink to={"/docs/button"}>Button</RouterLink>
 			</div>
-			<RouterView />
+			<RouterView>
+				{({
+					Component: Comp,
+					route: R,
+				}: {
+					Component: VNode;
+					route: RouteLocationNormalizedLoaded;
+				}) => <Transition name={"fade"}>{Comp}</Transition>}
+			</RouterView>
 		</div>
 	);
 };
