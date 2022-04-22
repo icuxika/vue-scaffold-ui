@@ -21,15 +21,15 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      color: #3f19a6;
+      color: var(--home-text);
 
       > .actions {
         padding: 8px 0;
 
         a {
           margin: 0 8px;
-          background: #e95939;
-          color: white;
+          background: var(--home-btn-background);
+          color: var(--home-btn-text);
           display: inline-block;
           border-radius: 4px;
           padding: 8px 24px;
@@ -41,7 +41,7 @@
         width: 84px;
         height: 24px;
         border-color: #97a6c7;
-        color: #3f19a6;
+        color: var(--home-text);
       }
     }
   }
