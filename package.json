@@ -10,7 +10,8 @@
 	},
 	"types": "./dist/index.d.ts",
 	"private": false,
-	"version": "0.2.1",
+	"sideEffects": false,
+	"version": "0.2.2",
 	"scripts": {
 		"dev": "vite",
 		"build": "vue-tsc --noEmit && vite build && vue-tsc --project tsconfig.lib.json",

@@ -31,19 +31,49 @@ yarn add @icuxika/vue-scaffold-ui
 npm install @icuxika/vue-scaffold-ui
 ```
 
-### 引入 `@icuxika/vue-scaffold-ui`
+### 直接使用
+
+#### 引入 `@icuxika/vue-scaffold-ui`
 
 ```javascript
 import { VBanner, VButton } from "@icuxika/vue-scaffold-ui";
 import "@icuxika/vue-scaffold-ui/style.css";
 ```
 
-### template
+#### template
 
 ```vue
 
 <VBanner />
 <VButton loading>naive-ui</VButton>
+```
+
+### 通过插件使用
+
+#### 引入
+
+```typescript
+import {
+	create as createVUI,
+	VBanner,
+	VButton,
+} from "@icuxika/vue-scaffold-ui";
+import "@icuxika/vue-scaffold-ui/style.css";
+
+const vueScaffoldUI = createVUI({
+	components: [VBanner, VButton],
+});
+
+const app = createApp(App);
+app.use(vueScaffoldUI);
+```
+
+#### template
+
+```vue
+
+<v-banner></v-banner>
+<v-button loading>Vue Scaffold UI</v-button>
 ```
 
 ## 如何构建

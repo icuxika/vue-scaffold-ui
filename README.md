@@ -32,19 +32,49 @@ or
 npm install @icuxika/vue-scaffold-ui
 ```
 
-### import `@icuxika/vue-scaffold-ui`
+### Direct
+
+#### import `@icuxika/vue-scaffold-ui`
 
 ```javascript
 import { VBanner, VButton } from "@icuxika/vue-scaffold-ui";
 import "@icuxika/vue-scaffold-ui/style.css";
 ```
 
-### template
+#### template
 
 ```vue
 
 <VBanner />
 <VButton loading>naive-ui</VButton>
+```
+
+#### Plugin
+
+#### import
+
+```typescript
+import {
+	create as createVUI,
+	VBanner,
+	VButton,
+} from "@icuxika/vue-scaffold-ui";
+import "@icuxika/vue-scaffold-ui/style.css";
+
+const vueScaffoldUI = createVUI({
+	components: [VBanner, VButton],
+});
+
+const app = createApp(App);
+app.use(vueScaffoldUI);
+```
+
+#### template
+
+```vue
+
+<v-banner></v-banner>
+<v-button loading>Vue Scaffold UI</v-button>
 ```
 
 ## Build

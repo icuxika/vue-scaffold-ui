@@ -1,3 +1,8 @@
+<script lang="ts">
+export default {
+	name: "Banner",
+};
+</script>
 <script setup lang="ts"></script>
 
 <template>

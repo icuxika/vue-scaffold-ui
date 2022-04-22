@@ -1,2 +1,2 @@
-export { Banner as VBanner } from "./banner";
-export { Button as VButton } from "./button";
+export * from "./components";
+export { default as create } from "./create";

@@ -1,1 +1,1 @@
-export { default as Banner } from "./Banner.vue";
+export { default as VBanner } from "./Banner.vue";
