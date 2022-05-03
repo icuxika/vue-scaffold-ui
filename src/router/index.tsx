@@ -3,6 +3,7 @@ import { Home } from "../views/Home";
 import { Docs } from "../views/Docs";
 import { BannerDemo } from "../views/demo/banner";
 import { ButtonDemo } from "../views/demo/button";
+import { VerificationDemo } from "../views/demo/verification";
 
 const routes: RouteRecordRaw[] = [
 	{
@@ -21,6 +22,10 @@ const routes: RouteRecordRaw[] = [
 			{
 				path: "button",
 				component: ButtonDemo,
+			},
+			{
+				path: "verification",
+				component: VerificationDemo,
 			},
 		],
 	},

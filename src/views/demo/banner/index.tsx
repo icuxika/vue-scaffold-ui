@@ -1,8 +1,13 @@
 import { FunctionalComponent } from "vue";
-import { VBanner } from "@icuxika/vue-scaffold-ui";
+import VBannerDemo1 from "./VBannerDemo1.vue";
+import { DemoX } from "../../components/DemoX";
 
 export const BannerDemo: FunctionalComponent = () => {
-	return <VBanner />;
+	return (
+		<div>
+			<DemoX component={VBannerDemo1} />
+		</div>
+	);
 };
 
 BannerDemo.displayName = "BannerDemo";
