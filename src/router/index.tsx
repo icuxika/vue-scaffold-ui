@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import { Home } from "../views/Home";
-import { Docs } from "../views/Docs";
-import { BannerDemo } from "../views/demo/banner";
-import { ButtonDemo } from "../views/demo/button";
-import { VerificationDemo } from "../views/demo/verification";
+import { Home } from "@/views/Home";
+import { Docs } from "@/views/Docs";
+import { BannerDemo } from "@/views/demo/banner";
+import { ButtonDemo } from "@/views/demo/button";
+import { VerificationDemo } from "@/views/demo/verification";
 
 const routes: RouteRecordRaw[] = [
 	{

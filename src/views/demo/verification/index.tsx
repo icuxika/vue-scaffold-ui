@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "vue";
-import { DemoX } from "../../components/DemoX";
-import VerificationDemo1 from "./VerificationDemo1.vue";
+import { DemoX } from "@/views/components/DemoX";
+import VerificationDemo1 from "@/views/demo/verification/VerificationDemo1.vue";
 
 export const VerificationDemo: FunctionalComponent = () => {
 	return (

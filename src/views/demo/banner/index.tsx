@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "vue";
-import VBannerDemo1 from "./VBannerDemo1.vue";
-import { DemoX } from "../../components/DemoX";
+import VBannerDemo1 from "@/views/demo/banner/VBannerDemo1.vue";
+import { DemoX } from "@/views/components/DemoX";
 
 export const BannerDemo: FunctionalComponent = () => {
 	return (

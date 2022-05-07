@@ -4,7 +4,7 @@ import {
 	RouterLink,
 	RouteLocationNormalizedLoaded,
 } from "vue-router";
-import style from "./docs.module.scss";
+import style from "@/views/docs.module.scss";
 
 export const Docs: FunctionalComponent = () => {
 	return (

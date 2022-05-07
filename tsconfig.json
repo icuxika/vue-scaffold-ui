@@ -12,7 +12,7 @@
 		"esModuleInterop": true,
 		"lib": ["esnext", "dom"],
 		"paths": {
-			"@/*": ["./src"],
+			"@/*": ["./src/*"],
 			"@icuxika/vue-scaffold-ui": ["./lib/index.ts"]
 		},
 		"types": ["@intlify/vite-plugin-vue-i18n/client"]

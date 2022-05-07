@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "vue";
-import Demo from "../../components/Demo.vue";
-import { DemoX } from "../../components/DemoX";
-import ButtonDemo1 from "./ButtonDemo1.vue";
+import Demo from "@/views/components/Demo.vue";
+import { DemoX } from "@/views/components/DemoX";
+import ButtonDemo1 from "@/views/demo/button/ButtonDemo1.vue";
 
 export const ButtonDemo: FunctionalComponent = () => {
 	return (

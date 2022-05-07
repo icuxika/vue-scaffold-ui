@@ -2,12 +2,10 @@
 基本使用
 </demo>
 
-<script setup lang="ts">
-import { VButton } from "@icuxika/vue-scaffold-ui";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-	<VButton>This is Button</VButton>
+	<v-button>This is Button</v-button>
 </template>
 
 <style lang="scss" scoped></style>

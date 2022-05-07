@@ -1,10 +1,8 @@
 <demo>
 测试
 </demo>
-<script setup lang="ts">
-import { VBanner } from "@icuxika/vue-scaffold-ui";
-</script>
+<script setup lang="ts"></script>
 <template>
-	<VBanner />
+	<v-banner></v-banner>
 </template>
 <style lang="scss" scoped></style>

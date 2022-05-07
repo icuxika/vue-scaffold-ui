@@ -7,7 +7,6 @@ import {
 	withModifiers,
 	Component,
 } from "vue";
-import { VButton } from "@icuxika/vue-scaffold-ui";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Prism from "prismjs";
@@ -54,9 +53,9 @@ export const DemoX = defineComponent({
 				<div class={style.component}>{h(props.component)}</div>
 				<div class={style.action}>
 					<div onClick={withModifiers(toggleCodeVisible, ["stop"])}>
-						<VButton>
+						<v-button>
 							{codeVisible.value ? "隐藏源代码" : "查看源代码"}
-						</VButton>
+						</v-button>
 					</div>
 				</div>
 				{codeVisible.value ? (

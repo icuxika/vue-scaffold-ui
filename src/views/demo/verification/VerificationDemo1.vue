@@ -2,8 +2,8 @@
 拖拽填充验证码
 </demo>
 <script setup lang="ts">
-import { VerificationImageInfo, VVerification } from "@icuxika/vue-scaffold-ui";
-import dataJson from "./data.json";
+import { VerificationImageInfo } from "@icuxika/vue-scaffold-ui";
+import dataJson from "@/views/demo/verification/data.json";
 import { ref } from "vue";
 
 let defaultObj: VerificationImageInfo = {
@@ -80,7 +80,7 @@ const onConfirm = (x: number, y: number, token: string): boolean => {
 			Teleport (https://github.com/vuejs/core/issues/4605)</span
 		>
 	</div>
-	<VVerification
+	<v-verification
 		v-model:visible="visible"
 		:on-refresh="onRefresh"
 		:on-confirm="onConfirm"
@@ -94,7 +94,7 @@ const onConfirm = (x: number, y: number, token: string): boolean => {
 		<template #confirm>
 			<div class="confirm">确认</div>
 		</template>
-	</VVerification>
+	</v-verification>
 </template>
 
 <style lang="scss" scoped>

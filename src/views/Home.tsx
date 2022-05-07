@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
 import { RouterLink } from "vue-router";
-import style from "./home.module.scss";
+import style from "@/views/home.module.scss";
 import { useI18n } from "vue-i18n";
 
 export const Home = defineComponent({
