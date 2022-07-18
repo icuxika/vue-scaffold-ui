@@ -13,6 +13,7 @@ export const Docs: FunctionalComponent = () => {
 				<RouterLink to={"/"}>Home</RouterLink>
 				<RouterLink to={"/docs/banner"}>Banner</RouterLink>
 				<RouterLink to={"/docs/button"}>Button</RouterLink>
+				<RouterLink to={"/docs/milkdown"}>Milkdown</RouterLink>
 				<RouterLink to={"/docs/verification"}>Verification</RouterLink>
 			</div>
 			<RouterView>
