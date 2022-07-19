@@ -1,4 +1,4 @@
 export * from "./banner";
 export * from "./button";
-export * from "./milkdown";
+export * from "./markdown";
 export * from "./verification";

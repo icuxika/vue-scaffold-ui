@@ -15,12 +15,12 @@ import {
 	create as createVUI,
 	VBanner,
 	VButton,
-	VMilkdown,
+	VMarkdown,
 	VVerification,
 } from "@icuxika/vue-scaffold-ui";
 
 const vueScaffoldUI = createVUI({
-	components: [VBanner, VButton, VMilkdown, VVerification],
+	components: [VBanner, VButton, VMarkdown, VVerification],
 });
 
 const app = createApp(App);
