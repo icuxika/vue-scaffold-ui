@@ -3,8 +3,8 @@
 </demo>
 <script setup lang="ts">
 import { ref } from "vue";
-const value = ref<string>("");
-const darkMode = ref<boolean>(false);
+const value = ref("");
+const darkMode = ref(false);
 </script>
 <template>
 	<v-markdown v-model:value="value" v-model:dark-mode="darkMode"></v-markdown>
