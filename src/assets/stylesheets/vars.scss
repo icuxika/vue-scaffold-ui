@@ -3,3 +3,9 @@
   --home-btn-background: #e95939;
   --home-btn-text: white;
 }
+
+:root[theme='dark'] {
+  --home-text: darkorange;
+  --home-btn-background: black;
+  --home-btn-text: white;
+}

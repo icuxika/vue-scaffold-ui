@@ -1,4 +1,4 @@
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import { RouterLink } from "vue-router";
 import style from "@/views/home.module.scss";
 import { useI18n } from "vue-i18n";
@@ -6,6 +6,15 @@ import { useI18n } from "vue-i18n";
 export const Home = defineComponent({
 	setup() {
 		const { t, locale } = useI18n();
+		const isDarkMode = ref(false);
+		// 切换主题
+		const onChange = (payload: Event) => {
+			if (isDarkMode.value) {
+				document.documentElement.setAttribute("theme", "dark");
+			} else {
+				document.documentElement.removeAttribute("theme");
+			}
+		};
 		return () => (
 			<div class={style.container}>
 				<div class={style.banner}>
@@ -21,6 +30,10 @@ export const Home = defineComponent({
 						<select v-model={locale.value}>
 							<option value={"zh"}>中文</option>
 							<option value={"en"}>English</option>
+						</select>
+						<select v-model={isDarkMode.value} onChange={onChange}>
+							<option value={true}>Dark</option>
+							<option value={false}>Light</option>
 						</select>
 					</div>
 				</div>
