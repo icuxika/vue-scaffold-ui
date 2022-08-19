@@ -6,7 +6,9 @@ export default {
 <script setup lang="ts"></script>
 
 <template>
-	<h1>Vue Scaffold UI</h1>
+	<div class="v3-banner">
+		<h1>Vue Scaffold UI</h1>
+	</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss"></style>

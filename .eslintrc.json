@@ -30,6 +30,8 @@
 		"vue/no-v-model-argument": "off",
 		"vue/multi-word-component-names": "off",
 		"vue/no-multiple-template-root": "off",
-		"vue/no-v-html": "off"
+		"vue/no-v-html": "off",
+		"vue/valid-attribute-name": "off",
+		"vue/no-reserved-component-names": "off"
 	}
 }

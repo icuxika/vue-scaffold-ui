@@ -46,7 +46,7 @@ watch(
 </script>
 
 <template>
-	<div :class="`container ${showSource ? 'two-side' : ''}`">
+	<div :class="`v3-markdown ${showSource ? 'two-side' : ''}`">
 		<Milkdown
 			ref="markdownEditor"
 			v-model:markdown="markdown"
@@ -63,7 +63,7 @@ watch(
 </template>
 
 <style lang="scss">
-.container {
+.v3-markdown {
 	max-width: 72rem;
 	display: block;
 	margin: 0 auto;
@@ -105,7 +105,7 @@ watch(
 }
 
 @media screen and (min-width: 72rem) {
-	.container {
+	.v3-markdown {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;

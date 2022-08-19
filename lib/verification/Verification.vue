@@ -150,7 +150,7 @@ onMounted(() => {
 });
 </script>
 <template>
-	<div v-if="props.visible" class="container">
+	<div v-if="props.visible" class="v3-verification">
 		<div class="title">
 			<span>完成拼图然后点击确认</span>
 		</div>
@@ -197,7 +197,7 @@ onMounted(() => {
 </template>
 <style lang="scss" scoped>
 $width: 280px;
-.container {
+.v3-verification {
 	width: $width + 48px;
 	padding: 24px;
 	border: 2px dodgerblue solid;
