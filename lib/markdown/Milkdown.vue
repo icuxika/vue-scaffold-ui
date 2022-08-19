@@ -39,14 +39,16 @@ import { Transaction } from "prosemirror-state";
 import { Fragment, Slice } from "prosemirror-model";
 import { switchTheme } from "@milkdown/utils";
 
-interface Props {
-	markdown: string;
-	showSource: boolean;
-}
-const props = withDefaults(defineProps<Props>(), {
-	markdown: "",
-	showSource: false,
-});
+const props = withDefaults(
+	defineProps<{
+		markdown: string;
+		showSource: boolean;
+	}>(),
+	{
+		markdown: "",
+		showSource: false,
+	}
+);
 const emit = defineEmits<{
 	(event: "update:markdown", value: string): void;
 	(event: "update:show-source", value: boolean): void;

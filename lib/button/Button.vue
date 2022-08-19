@@ -6,21 +6,22 @@ export default {
 <script setup lang="ts">
 import { computed } from "vue";
 
-interface Props {
-	theme?: string;
-	size?: string;
-	level?: string;
-	disabled?: boolean;
-	loading?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-	theme: "button",
-	size: "normal",
-	level: "normal",
-	disabled: false,
-	loading: false,
-});
+const props = withDefaults(
+	defineProps<{
+		theme?: string;
+		size?: string;
+		level?: string;
+		disabled?: boolean;
+		loading?: boolean;
+	}>(),
+	{
+		theme: "button",
+		size: "normal",
+		level: "normal",
+		disabled: false,
+		loading: false,
+	}
+);
 
 const classes = computed(() => {
 	return {

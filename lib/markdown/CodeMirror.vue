@@ -32,14 +32,16 @@ import { lintKeymap } from "@codemirror/lint";
 import { defaultKeymap, history, historyKeymap } from "@codemirror/commands";
 import { markdown } from "@codemirror/lang-markdown";
 
-interface Props {
-	markdown: string;
-	hasFocus: boolean;
-}
-const props = withDefaults(defineProps<Props>(), {
-	markdown: "",
-	hasFocus: false,
-});
+const props = withDefaults(
+	defineProps<{
+		markdown: string;
+		hasFocus: boolean;
+	}>(),
+	{
+		markdown: "",
+		hasFocus: false,
+	}
+);
 const emit = defineEmits<{
 	(event: "update:markdown", value: string): void;
 	(event: "update:has-focus", value: boolean): void;

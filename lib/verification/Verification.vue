@@ -7,16 +7,18 @@ export default {
 import { computed, onMounted, ref } from "vue";
 import { VerificationImageInfo } from "./types";
 
-interface Props {
-	visible: boolean;
-	// 刷新验证码
-	onRefresh: () => VerificationImageInfo;
-	// 确认验证码
-	onConfirm: (x: number, y: number, token: string) => boolean;
-}
-const props = withDefaults(defineProps<Props>(), {
-	visible: false,
-});
+const props = withDefaults(
+	defineProps<{
+		visible: boolean;
+		// 刷新验证码
+		onRefresh: () => VerificationImageInfo;
+		// 确认验证码
+		onConfirm: (x: number, y: number, token: string) => boolean;
+	}>(),
+	{
+		visible: false,
+	}
+);
 
 const emit = defineEmits<{
 	(event: "update:visible", visible: boolean): void;

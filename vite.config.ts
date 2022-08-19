@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig, loadEnv, PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import * as path from "path";
@@ -10,26 +10,30 @@ import vueI18n from "@intlify/vite-plugin-vue-i18n";
 export default defineConfig(({ command, mode }) => {
 	// 读取对应mode下 .env 中的环境变量
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+
+	const commonPlugins: PluginOption[] = [
+		vue(),
+		vueJsx(),
+		svgSprite(),
+		demo(),
+		vueI18n({
+			include: path.resolve(__dirname, "./locales/**"),
+			compositionOnly: true,
+		}),
+	];
+
+	const commonAlias = {
+		"@": path.resolve(__dirname, "./src"),
+		"@icuxika/vue-scaffold-ui": path.resolve("lib"),
+	};
+
 	if (mode === "preview" || mode === "docs") {
-		// 库预览
+		// build:preview | build:docs | preview
 		return {
 			base: "./",
-			// dev 独有配置
-			plugins: [
-				vue(),
-				vueJsx(),
-				svgSprite(),
-				demo(),
-				vueI18n({
-					include: path.resolve(__dirname, "./locales/**"),
-					compositionOnly: true,
-				}),
-			],
+			plugins: commonPlugins,
 			resolve: {
-				alias: {
-					"@": path.resolve(__dirname, "./src"),
-					"@icuxika/vue-scaffold-ui": path.resolve("lib"),
-				},
+				alias: commonAlias,
 			},
 			build: {
 				outDir: "docs",
@@ -37,29 +41,16 @@ export default defineConfig(({ command, mode }) => {
 		};
 	}
 	if (command === "serve") {
+		// dev
 		return {
-			// dev 独有配置
-			plugins: [
-				vue(),
-				vueJsx(),
-				svgSprite(),
-				demo(),
-				vueI18n({
-					include: path.resolve(__dirname, "./locales/**"),
-					compositionOnly: true,
-				}),
-			],
+			plugins: commonPlugins,
 			resolve: {
-				alias: {
-					"@": path.resolve(__dirname, "./src"),
-					"@icuxika/vue-scaffold-ui": path.resolve("lib"),
-				},
+				alias: commonAlias,
 			},
 		};
 	} else {
-		// command === 'build'
+		// build
 		return {
-			// build 独有配置
 			plugins: [vue(), vueJsx()],
 			build: {
 				cssCodeSplit: false,

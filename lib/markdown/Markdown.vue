@@ -7,14 +7,17 @@ export default {
 import { ref, watch } from "vue";
 import Milkdown from "./Milkdown.vue";
 import CodeMirror from "./CodeMirror.vue";
-interface Props {
-	value: string;
-	darkMode: boolean;
-}
-const props = withDefaults(defineProps<Props>(), {
-	value: "",
-	darkMode: false,
-});
+
+const props = withDefaults(
+	defineProps<{
+		value: string;
+		darkMode: boolean;
+	}>(),
+	{
+		value: "",
+		darkMode: false,
+	}
+);
 const emit = defineEmits<{
 	(event: "update:value", value: string): void;
 }>();
