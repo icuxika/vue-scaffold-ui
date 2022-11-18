@@ -17,10 +17,11 @@ import {
 	VButton,
 	VMarkdown,
 	VVerification,
+	VConfigProvider,
 } from "@icuxika/vue-scaffold-ui";
 
 const vueScaffoldUI = createVUI({
-	components: [VBanner, VButton, VMarkdown, VVerification],
+	components: [VBanner, VButton, VMarkdown, VVerification, VConfigProvider],
 });
 
 const app = createApp(App);

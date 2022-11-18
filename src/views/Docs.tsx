@@ -5,6 +5,7 @@ import {
 	RouteLocationNormalizedLoaded,
 } from "vue-router";
 import style from "@/views/docs.module.scss";
+import { VConfigProvider } from "@icuxika/vue-scaffold-ui";
 
 export const Docs = defineComponent({
 	setup() {
@@ -27,9 +28,11 @@ export const Docs = defineComponent({
 						Component: VNode;
 						route: RouteLocationNormalizedLoaded;
 					}) => (
-						<Transition name={"fade"}>
-							<KeepAlive>{Comp}</KeepAlive>
-						</Transition>
+						<v-config-provider theme={"light"}>
+							<Transition name={"fade"}>
+								<KeepAlive>{Comp}</KeepAlive>
+							</Transition>
+						</v-config-provider>
 					)}
 				</RouterView>
 			</div>
