@@ -1,17 +1,32 @@
-import { defineComponent, Transition, VNode, KeepAlive } from "vue";
+import { defineComponent, Transition, VNode, KeepAlive, ref } from "vue";
 import {
 	RouterView,
 	RouterLink,
 	RouteLocationNormalizedLoaded,
 } from "vue-router";
 import style from "@/views/docs.module.scss";
-import { VConfigProvider } from "@icuxika/vue-scaffold-ui";
+import { lightTheme, darkTheme } from "../../lib/themes";
 
 export const Docs = defineComponent({
 	setup() {
+		const theme = ref(lightTheme);
 		return () => (
 			<div>
 				<div class={style.header}>
+					<button
+						onClick={() => {
+							theme.value = lightTheme;
+						}}
+					>
+						light
+					</button>
+					<button
+						onClick={() => {
+							theme.value = darkTheme;
+						}}
+					>
+						dark
+					</button>
 					<RouterLink to={"/"}>Home</RouterLink>
 					<RouterLink to={"/docs/banner"}>Banner</RouterLink>
 					<RouterLink to={"/docs/button"}>Button</RouterLink>
@@ -28,7 +43,7 @@ export const Docs = defineComponent({
 						Component: VNode;
 						route: RouteLocationNormalizedLoaded;
 					}) => (
-						<v-config-provider theme={"light"}>
+						<v-config-provider theme={theme.value}>
 							<Transition name={"fade"}>
 								<KeepAlive>{Comp}</KeepAlive>
 							</Transition>

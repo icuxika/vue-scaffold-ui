@@ -9,7 +9,7 @@ export default c([
 	`,
 		[
 			cE("border", {
-				border: "dodgerblue 2px solid",
+				border: "var(--s-color)",
 				color: "var(--s-text-color)",
 			}),
 		]

@@ -4,15 +4,17 @@ export default {
 };
 </script>
 <script setup lang="ts">
+import { computed, CSSProperties } from "vue";
 import style from "./styles/index";
 import { useTheme } from "../_hooks/use-theme";
-import { computed, CSSProperties } from "vue";
-useTheme("Banner", "-banner", style);
-// TODO 根据Naive UI的源码，useTheme应返回关联着支持css变量值动态更新的引用交由computedCssVars绑定到页面元素上
+import { bannerLight } from "./themes";
+const themeRef = useTheme("Banner", "-banner", style, bannerLight);
 const computedCssVars = computed((): CSSProperties => {
+	const theme = themeRef.value;
+	const { self } = theme;
 	return {
-		"--s-color": "black",
-		"--s-text-color": "dodgerblue",
+		"--s-color": self.colorSuccess,
+		"--s-text-color": self.colorHoverWarning,
 	};
 });
 </script>

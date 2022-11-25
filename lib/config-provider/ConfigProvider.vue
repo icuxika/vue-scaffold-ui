@@ -4,15 +4,27 @@ export default {
 };
 </script>
 <script setup lang="ts">
+import { GlobalTheme, key } from "./interface";
+import { lightTheme } from "../themes";
+import { computed, InjectionKey, provide } from "vue";
+import { ConfigProviderInjection } from "./internal-interface";
+
 const props = withDefaults(
 	defineProps<{
-		theme?: string;
+		theme: GlobalTheme;
 	}>(),
-	{
-		theme: "light",
-	}
+	{}
 );
-console.log(props.theme);
+
+const mergedThemeRef = computed(() => {
+	const { theme } = props;
+	console.log(theme.name);
+	return theme;
+});
+
+provide(key, {
+	mergedThemeRef,
+});
 </script>
 <template>
 	<slot></slot>
