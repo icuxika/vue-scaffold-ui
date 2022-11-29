@@ -5,11 +5,22 @@ import {
 	RouteLocationNormalizedLoaded,
 } from "vue-router";
 import style from "@/views/docs.module.scss";
-import { lightTheme, darkTheme, GlobalTheme } from "@icuxika/vue-scaffold-ui";
+import {
+	lightTheme,
+	darkTheme,
+	GlobalTheme,
+	GlobalThemeOverrides,
+} from "@icuxika/vue-scaffold-ui";
 
 export const Docs = defineComponent({
 	setup() {
 		const theme = ref<GlobalTheme>(lightTheme);
+		const themeOverrides: GlobalThemeOverrides = {
+			common: {},
+			Banner: {
+				colorSuccess: "dodgerblue",
+			},
+		};
 		return () => (
 			<div>
 				<div class={style.header}>
@@ -43,7 +54,10 @@ export const Docs = defineComponent({
 						Component: VNode;
 						route: RouteLocationNormalizedLoaded;
 					}) => (
-						<v-config-provider theme={theme.value}>
+						<v-config-provider
+							theme={theme.value}
+							themeOverrides={themeOverrides}
+						>
 							<Transition name={"fade"}>
 								<KeepAlive>{Comp}</KeepAlive>
 							</Transition>
