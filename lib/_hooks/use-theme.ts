@@ -1,9 +1,9 @@
 import { CNode } from "css-render";
 import { ThemeCommonVars } from "../_styles/common";
-import { computed, inject, InjectionKey } from "vue";
+import { computed, inject } from "vue";
 import { merge } from "lodash-es";
-import { ConfigProviderInjection } from "../config-provider/internal-interface";
-import { GlobalTheme, key } from "../config-provider/interface";
+import { GlobalTheme } from "../config-provider";
+import { key } from "../config-provider/context";
 
 export interface Theme<N, T = any, R = any> {
 	name: N;

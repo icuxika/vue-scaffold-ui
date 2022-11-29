@@ -5,11 +5,11 @@ import {
 	RouteLocationNormalizedLoaded,
 } from "vue-router";
 import style from "@/views/docs.module.scss";
-import { lightTheme, darkTheme } from "../../lib/themes";
+import { lightTheme, darkTheme, GlobalTheme } from "@icuxika/vue-scaffold-ui";
 
 export const Docs = defineComponent({
 	setup() {
-		const theme = ref(lightTheme);
+		const theme = ref<GlobalTheme>(lightTheme);
 		return () => (
 			<div>
 				<div class={style.header}>

@@ -6,7 +6,7 @@ export default {
 <script setup lang="ts">
 import { computed, CSSProperties } from "vue";
 import style from "./styles/index";
-import { useTheme } from "../_hooks/use-theme";
+import { useTheme } from "../_hooks";
 import { bannerLight } from "./themes";
 const themeRef = useTheme("Banner", "-banner", style, bannerLight);
 const computedCssVars = computed((): CSSProperties => {

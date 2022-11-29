@@ -4,10 +4,9 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { GlobalTheme, key } from "./interface";
-import { lightTheme } from "../themes";
-import { computed, InjectionKey, provide } from "vue";
-import { ConfigProviderInjection } from "./internal-interface";
+import { computed, provide } from "vue";
+import { key } from "./context";
+import { GlobalTheme } from "./index";
 
 const props = withDefaults(
 	defineProps<{
@@ -18,7 +17,6 @@ const props = withDefaults(
 
 const mergedThemeRef = computed(() => {
 	const { theme } = props;
-	console.log(theme.name);
 	return theme;
 });
 

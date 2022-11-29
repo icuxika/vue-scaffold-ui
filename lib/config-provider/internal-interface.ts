@@ -1,6 +1,6 @@
 import { BannerTheme } from "../banner/themes";
 import { Ref } from "vue";
-import { GlobalTheme } from "./interface";
+import { GlobalTheme } from "./index";
 
 export interface GlobalThemeWithoutCommon {
 	Banner?: BannerTheme;
