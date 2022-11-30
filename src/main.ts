@@ -24,6 +24,16 @@ const vueScaffoldUI = createVUI({
 	components: [VBanner, VButton, VMarkdown, VVerification, VConfigProvider],
 });
 
+declare module "@vue/runtime-core" {
+	export interface GlobalComponents {
+		VBanner: typeof VBanner;
+		VButton: typeof VButton;
+		VConfigProvider: typeof VConfigProvider;
+		VMarkdown: typeof VMarkdown;
+		VVerification: typeof VVerification;
+	}
+}
+
 const app = createApp(App);
 app.use(router);
 app.use(i18n);
