@@ -1,0 +1,12 @@
+{
+	"extends": "./tsconfig.common.json",
+	"compilerOptions": {
+		"composite": true,
+		"paths": {
+			"@/*": ["./src/*"],
+			"@icuxika/vue-scaffold-ui": ["./lib/index.ts"]
+		},
+		"types": ["@intlify/vite-plugin-vue-i18n/client"]
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+}

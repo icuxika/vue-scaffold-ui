@@ -1,24 +1,9 @@
 {
-	"compilerOptions": {
-		"target": "esnext",
-		"useDefineForClassFields": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"strict": true,
-		"jsx": "preserve",
-		"sourceMap": true,
-		"resolveJsonModule": true,
-		"isolatedModules": false,
-		"esModuleInterop": true,
-		"lib": ["esnext", "dom"],
-		"paths": {
-			"@/*": ["./src/*"],
-			"@icuxika/vue-scaffold-ui": ["./lib/index.ts"]
-		},
-		"types": ["@intlify/vite-plugin-vue-i18n/client"]
-	},
-	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+	"include": [],
 	"references": [
+		{
+			"path": "./tsconfig.docs.json"
+		},
 		{
 			"path": "./tsconfig.node.json"
 		}

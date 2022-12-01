@@ -14,7 +14,7 @@
 	"version": "0.2.3",
 	"scripts": {
 		"dev": "vite",
-		"build": "vue-tsc --noEmit && vite build && vue-tsc --project tsconfig.lib.json",
+		"build": "vue-tsc --noEmit --project tsconfig.type.json && vite build && vue-tsc --project tsconfig.lib.json",
 		"build:preview": "vue-tsc --noEmit && vite build --mode preview",
 		"build:docs": "vue-tsc --noEmit && vite build --mode docs",
 		"preview": "vite preview --mode preview",
