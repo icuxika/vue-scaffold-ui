@@ -1,4 +1,4 @@
-declare module "@vue/runtime-core" {
+declare module "vue" {
 	export interface GlobalComponents {
 		VBanner: typeof import("@icuxika/vue-scaffold-ui")["VBanner"];
 		VButton: typeof import("@icuxika/vue-scaffold-ui")["VButton"];
@@ -7,3 +7,4 @@ declare module "@vue/runtime-core" {
 		VVerification: typeof import("@icuxika/vue-scaffold-ui")["VVerification"];
 	}
 }
+export {};

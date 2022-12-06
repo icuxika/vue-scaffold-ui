@@ -73,11 +73,12 @@ export default defineConfig(({ command, mode }) => {
 			}
 		);
 		const volarDTS = `
-declare module "@vue/runtime-core" {
+declare module "vue" {
     export interface GlobalComponents {
         ${lines.join("\n        ")}
     }
 }
+export {}
 `;
 		fs.writeFileSync(
 			path.resolve(process.cwd(), "volar.d.ts"),
