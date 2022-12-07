@@ -10,4 +10,4 @@ RUN su node -c "umask 0002 && npm install -g @vue/cli@${VUE_CLI_VERSION} http-se
 
 WORKDIR /app
 
-EXPOSE 8080
+EXPOSE 5713
