@@ -1,11 +1,13 @@
 :root {
-  --home-text: #3f19a6;
-  --home-btn-background: #e95939;
-  --home-btn-text: white;
+	--home-text: #fff3b0;
+	--home-select-text: #514f5a;
+	--home-btn-background: #e95939;
+	--home-btn-text: white;
 }
 
-:root[theme='dark'] {
-  --home-text: darkorange;
-  --home-btn-background: black;
-  --home-btn-text: white;
+:root[theme="dark"] {
+	--home-text: darkorange;
+	--home-select-text: #514f5a;
+	--home-btn-background: black;
+	--home-btn-text: white;
 }
