@@ -1,0 +1,6 @@
+.devcontainer/
+.husky/
+docs
+locales
+node_modules/
+dist/

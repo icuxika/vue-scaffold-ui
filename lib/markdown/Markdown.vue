@@ -102,8 +102,10 @@ watch(
 		height: calc(100vh - 11.5rem + 34px);
 		background: rgb(255, 255, 255);
 		border: 1px solid transparent;
-		box-shadow: 0 1px 1px rgba(59, 66, 82, 0.14),
-			0 2px 1px rgba(59, 66, 82, 0.12), 0 1px 3px rgba(59, 66, 82, 0.2);
+		box-shadow:
+			0 1px 1px rgba(59, 66, 82, 0.14),
+			0 2px 1px rgba(59, 66, 82, 0.12),
+			0 1px 3px rgba(59, 66, 82, 0.2);
 	}
 }
 
