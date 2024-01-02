@@ -16,4 +16,4 @@ interface VerificationImageInfo {
 	token: string;
 }
 
-export { VerificationImageInfo };
+export type { VerificationImageInfo };

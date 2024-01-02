@@ -1,16 +1,23 @@
 {
 	"compilerOptions": {
-		"target": "esnext",
+		"target": "ESNext",
 		"useDefineForClassFields": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"strict": true,
-		"jsx": "preserve",
-		"sourceMap": true,
+
+		"module": "ESNext",
+		"moduleResolution": "Node",
 		"resolveJsonModule": true,
-		"isolatedModules": false,
-		"esModuleInterop": true,
+
+		"noImplicitThis": true,
+		"strict": true,
+
+		"jsx": "preserve",
+		// tsx html组件提示
 		"jsxImportSource": "vue",
-		"lib": ["esnext", "dom"]
+
+		"sourceMap": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+
+		"lib": ["ESNext", "DOM", "DOM.Iterable"]
 	}
 }
