@@ -10,7 +10,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": false,
 		"esModuleInterop": true,
-		"noImplicitAny": false,
+		"jsxImportSource": "vue",
 		"lib": ["esnext", "dom"]
 	}
 }
