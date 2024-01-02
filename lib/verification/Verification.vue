@@ -152,84 +152,110 @@ onMounted(() => {
 });
 </script>
 <template>
-	<div v-if="props.visible" class="v3-verification">
-		<div class="title">
-			<span>完成拼图然后点击确认</span>
-		</div>
-		<div
-			ref="imageWrapperRef"
-			class="image-wrapper"
-			@drop="onDrop"
-			@dragenter.prevent
-			@dragleave.prevent
-			@dragend.prevent
-			@dragover="ondragover"
-		>
-			<div ref="blockWrapperRef" class="block-wrapper">
-				<img
-					class="block-image"
-					:src="blockImageUrl"
-					alt=""
-					draggable="true"
-					@dragstart="onDragStart"
+	<Teleport to="body">
+		<div v-if="props.visible" class="v3-verification">
+			<div class="mask" @click="emit('update:visible', false)"></div>
+			<div class="container">
+				<div class="title">
+					<span>完成拼图然后点击确认</span>
+				</div>
+				<div
+					ref="imageWrapperRef"
+					class="image-wrapper"
+					@drop="onDrop"
 					@dragenter.prevent
 					@dragleave.prevent
 					@dragend.prevent
-				/>
+					@dragover="ondragover"
+				>
+					<div ref="blockWrapperRef" class="block-wrapper">
+						<img
+							class="block-image"
+							:src="blockImageUrl"
+							alt=""
+							draggable="true"
+							@dragstart="onDragStart"
+							@dragenter.prevent
+							@dragleave.prevent
+							@dragend.prevent
+						/>
+					</div>
+				</div>
+				<div class="control-wrapper">
+					<div
+						class="cancel-wrapper"
+						@click="emit('update:visible', false)"
+					>
+						<slot name="cancel">
+							<span>取消</span>
+						</slot>
+					</div>
+					<div class="refresh-wrapper" @click="refresh">
+						<slot name="refresh">
+							<span>刷新</span>
+						</slot>
+					</div>
+					<div class="confirm-wrapper" @click="confirm">
+						<slot name="confirm">
+							<span>确认</span>
+						</slot>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="control-wrapper">
-			<div class="cancel-wrapper" @click="emit('update:visible', false)">
-				<slot name="cancel">
-					<span>取消</span>
-				</slot>
-			</div>
-			<div class="refresh-wrapper" @click="refresh">
-				<slot name="refresh">
-					<span>刷新</span>
-				</slot>
-			</div>
-			<div class="confirm-wrapper" @click="confirm">
-				<slot name="confirm">
-					<span>确认</span>
-				</slot>
-			</div>
-		</div>
-	</div>
+	</Teleport>
 </template>
 <style lang="scss" scoped>
 $width: 280px;
 .v3-verification {
-	width: $width + 48px;
-	padding: 24px;
-	border: 2px dodgerblue solid;
-	border-radius: 8px;
-	& > .title {
-		text-align: center;
-		color: #757575;
-		font-size: 16px;
+	.mask {
+		position: fixed;
+		z-index: 9998;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
 	}
 
-	& > .image-wrapper {
-		background: v-bind(shadeImageUrl);
-		width: $width;
-		height: 171px;
-
-		& > .block-wrapper {
-			position: relative;
-			top: v-bind(blockWrapperTop);
-			width: 55px;
-			height: 55px;
+	.container {
+		position: fixed;
+		z-index: 9999;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: $width + 48px;
+		padding: 24px;
+		border: 2px dodgerblue solid;
+		background-color: white;
+		border-radius: 8px;
+		& > .title {
+			text-align: center;
+			color: #757575;
+			font-size: 16px;
 		}
-	}
 
-	& > .control-wrapper {
-		width: $width;
-		margin-top: 8px;
-		display: flex;
-		justify-content: space-between;
-		text-align: center;
-		color: white;
+		& > .image-wrapper {
+			background: v-bind(shadeImageUrl);
+			width: $width;
+			height: 171px;
+
+			& > .block-wrapper {
+				position: relative;
+				top: v-bind(blockWrapperTop);
+				width: 55px;
+				height: 55px;
+			}
+		}
+
+		& > .control-wrapper {
+			width: $width;
+			margin-top: 8px;
+			display: flex;
+			justify-content: space-between;
+			text-align: center;
+			color: white;
+		}
 	}
 }
 </style>

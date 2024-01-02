@@ -2,8 +2,8 @@
 拖拽填充验证码
 </demo>
 <script setup lang="ts">
-import { VerificationImageInfo } from "@icuxika/vue-scaffold-ui";
 import dataJson from "@/views/demo/verification/data.json";
+import { VerificationImageInfo } from "@icuxika/vue-scaffold-ui";
 import { ref } from "vue";
 
 let defaultObj: VerificationImageInfo = {
@@ -14,59 +14,14 @@ let defaultObj: VerificationImageInfo = {
 	token: dataJson.token,
 };
 
-const visible = ref(true);
+const visible = ref(false);
 
 const onRefresh = (): VerificationImageInfo => {
-	let xmlHttpRequest = new XMLHttpRequest();
-	xmlHttpRequest.open(
-		"GET",
-		"http://localhost:8900/admin/verification/refresh",
-		false
-	);
-
-	try {
-		xmlHttpRequest.send();
-		if (xmlHttpRequest.status == 200) {
-			let obj = JSON.parse(xmlHttpRequest.response).data;
-			return {
-				shadeImage: obj.shadeImage,
-				blockImage: obj.blockImage,
-				x: obj.x,
-				y: obj.y,
-				token: obj.token,
-			};
-		} else {
-			return defaultObj;
-		}
-	} catch (error) {
-		console.log(error);
-		return defaultObj;
-	}
+	return defaultObj;
 };
 
 const onConfirm = (x: number, y: number, token: string): boolean => {
 	console.log("x: " + x + ", y: " + y + ", token: " + token);
-	let xmlHttpRequest = new XMLHttpRequest();
-	xmlHttpRequest.open(
-		"GET",
-		"http://localhost:8900/admin/verification/check?x=" +
-			x +
-			"&y=" +
-			y +
-			"&token=" +
-			token,
-		false
-	);
-	try {
-		xmlHttpRequest.send();
-		if (xmlHttpRequest.status == 200) {
-			return JSON.parse(xmlHttpRequest.response).data;
-		} else {
-			return false;
-		}
-	} catch (error) {
-		console.log(error);
-	}
 	return false;
 };
 </script>
@@ -74,12 +29,7 @@ const onConfirm = (x: number, y: number, token: string): boolean => {
 	<button type="button" @click="visible = !visible">
 		{{ visible ? "隐藏验证码" : "显示验证码" }}
 	</button>
-	<div>
-		<span
-			>等修复在 css 中使用 v-bind 会与 Teleport 产生冲突的 PR 合并后使用
-			Teleport (https://github.com/vuejs/core/issues/4605)</span
-		>
-	</div>
+
 	<v-verification
 		v-model:visible="visible"
 		:on-refresh="onRefresh"
