@@ -1,22 +1,22 @@
 {
-	"extends": "./tsconfig.common.json",
-	"compilerOptions": {
-		"composite": true,
-		"paths": {
-			"@/*": ["./src/*"],
-			"@icuxika/vue-scaffold-ui": ["./lib/index.ts"]
-		},
-		"types": ["@intlify/vite-plugin-vue-i18n/client"]
-	},
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.d.ts",
-		"src/**/*.tsx",
-		"src/**/*.vue",
-		"src/**/*.json",
-		"lib/**/*.ts",
-		"lib/**/*.d.ts",
-		"lib/**/*.tsx",
-		"lib/**/*.vue"
-	]
+    "extends": "./tsconfig.common.json",
+    "compilerOptions": {
+        "composite": true,
+        "paths": {
+            "@/*": ["./src/*"],
+            "@icuxika/vue-scaffold-ui": ["./lib/index.ts"]
+        },
+        "types": ["@intlify/vite-plugin-vue-i18n/client"]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "src/**/*.json",
+        "lib/**/*.ts",
+        "lib/**/*.d.ts",
+        "lib/**/*.tsx",
+        "lib/**/*.vue"
+    ]
 }

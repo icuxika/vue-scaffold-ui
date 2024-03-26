@@ -8,9 +8,9 @@ const modifierPrefix = "--";
 
 const cssRender = CssRender();
 const plugin = BemPlugin({
-	blockPrefix: prefix,
-	elementPrefix,
-	modifierPrefix,
+    blockPrefix: prefix,
+    elementPrefix,
+    modifierPrefix,
 });
 cssRender.use(plugin);
 const { c, find } = cssRender;

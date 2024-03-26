@@ -1,19 +1,19 @@
 interface VerificationImageInfo {
-	/**
-	 * 底图
-	 */
-	shadeImage: string;
+    /**
+     * 底图
+     */
+    shadeImage: string;
 
-	/**
-	 * 拼图
-	 */
-	blockImage: string;
+    /**
+     * 拼图
+     */
+    blockImage: string;
 
-	x: number;
+    x: number;
 
-	y: number;
+    y: number;
 
-	token: string;
+    token: string;
 }
 
 export type { VerificationImageInfo };

@@ -1,9 +1,9 @@
 {
-	"extends": "./tsconfig.type.json",
-	"compilerOptions": {
-		"declaration": true,
-		"emitDeclarationOnly": true,
-		"rootDir": "lib",
-		"outDir": "dist"
-	}
+    "extends": "./tsconfig.type.json",
+    "compilerOptions": {
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "rootDir": "lib",
+        "outDir": "dist"
+    }
 }

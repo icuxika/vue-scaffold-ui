@@ -3,9 +3,9 @@ import { Ref } from "vue";
 import { GlobalTheme } from "./index";
 
 export interface GlobalThemeWithoutCommon {
-	Banner?: BannerTheme;
+    Banner?: BannerTheme;
 }
 
 export interface ConfigProviderInjection {
-	mergedThemeRef: Ref<GlobalTheme>;
+    mergedThemeRef: Ref<GlobalTheme>;
 }

@@ -1,23 +1,23 @@
 {
-	"compilerOptions": {
-		"target": "ESNext",
-		"useDefineForClassFields": true,
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
 
-		"module": "ESNext",
-		"moduleResolution": "Node",
-		"resolveJsonModule": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
 
-		"noImplicitThis": true,
-		"strict": true,
+        "noImplicitThis": true,
+        "strict": true,
 
-		"jsx": "preserve",
-		// tsx html组件提示
-		"jsxImportSource": "vue",
+        "jsx": "preserve",
+        // tsx html组件提示
+        "jsxImportSource": "vue",
 
-		"sourceMap": true,
-		"isolatedModules": true,
-		"esModuleInterop": true,
+        "sourceMap": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
 
-		"lib": ["ESNext", "DOM", "DOM.Iterable"]
-	}
+        "lib": ["ESNext", "DOM", "DOM.Iterable"]
+    }
 }

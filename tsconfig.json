@@ -1,11 +1,11 @@
 {
-	"include": [],
-	"references": [
-		{
-			"path": "./tsconfig.docs.json"
-		},
-		{
-			"path": "./tsconfig.node.json"
-		}
-	]
+    "include": [],
+    "references": [
+        {
+            "path": "./tsconfig.docs.json"
+        },
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
 }

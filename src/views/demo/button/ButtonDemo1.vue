@@ -5,7 +5,7 @@
 <script setup lang="ts"></script>
 
 <template>
-	<v-button>This is Button</v-button>
+    <v-button>This is Button</v-button>
 </template>
 
 <style lang="scss" scoped></style>

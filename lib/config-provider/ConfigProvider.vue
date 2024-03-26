@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-	name: "ConfigProvider",
+    name: "ConfigProvider",
 };
 </script>
 <script setup lang="ts">
@@ -9,21 +9,21 @@ import { key } from "./context";
 import { GlobalTheme, GlobalThemeOverrides } from "./index";
 
 const props = withDefaults(
-	defineProps<{
-		theme: GlobalTheme;
-		themeOverrides: GlobalThemeOverrides;
-	}>(),
-	{}
+    defineProps<{
+        theme: GlobalTheme;
+        themeOverrides: GlobalThemeOverrides;
+    }>(),
+    {}
 );
 const mergedThemeRef = computed(() => {
-	const { theme } = props;
-	return theme;
+    const { theme } = props;
+    return theme;
 });
 
 provide(key, {
-	mergedThemeRef,
+    mergedThemeRef,
 });
 </script>
 <template>
-	<slot></slot>
+    <slot></slot>
 </template>
