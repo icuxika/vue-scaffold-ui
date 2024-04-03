@@ -4,3 +4,5 @@ docs
 locales
 node_modules/
 dist/
+*.svg
+*.scss
