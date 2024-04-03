@@ -1,20 +1,13 @@
-import { defineComponent, ref } from "vue";
-import { RouterLink } from "vue-router";
+import { useTheme } from "@/hooks/use-theme";
 import style from "@/views/home.module.scss";
+import { defineComponent } from "vue";
 import { useI18n } from "vue-i18n";
+import { RouterLink } from "vue-router";
 
 export const Home = defineComponent({
     setup() {
         const { t, locale } = useI18n();
-        const isDarkMode = ref(false);
-        // 切换主题
-        const onChange = (payload: Event) => {
-            if (isDarkMode.value) {
-                document.documentElement.setAttribute("theme", "dark");
-            } else {
-                document.documentElement.removeAttribute("theme");
-            }
-        };
+        const { theme } = useTheme();
         return () => (
             <div class={style.container}>
                 <div class={style.header}>
@@ -24,9 +17,10 @@ export const Home = defineComponent({
                             <option value={"zh"}>中文</option>
                             <option value={"en"}>English</option>
                         </select>
-                        <select v-model={isDarkMode.value} onChange={onChange}>
-                            <option value={true}>Dark</option>
-                            <option value={false}>Light</option>
+                        <select v-model={theme.value}>
+                            <option value={"os"}>跟随系统</option>
+                            <option value={"light"}>亮色</option>
+                            <option value={"dark"}>暗色</option>
                         </select>
                     </div>
                 </div>

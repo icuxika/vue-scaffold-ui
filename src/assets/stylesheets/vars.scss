@@ -5,7 +5,7 @@
 	--home-btn-text: white;
 }
 
-:root[theme="dark"] {
+:root[data-theme="dark"] {
 	--home-text: darkorange;
 	--home-select-text: #514f5a;
 	--home-btn-background: black;
